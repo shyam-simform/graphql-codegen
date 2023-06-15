@@ -1,0 +1,7 @@
+query GetAllBlogs {
+    getBlogs {
+      id
+      content
+      author
+    }
+  }

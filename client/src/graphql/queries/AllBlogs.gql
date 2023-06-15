@@ -1,0 +1,5 @@
+query Bloggggs {
+  getBlogs {
+    id
+  }
+}

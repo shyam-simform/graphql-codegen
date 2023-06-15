@@ -1,0 +1,32 @@
+overwrite: true
+schema: "http://localhost:4000/graphql"
+documents: "**/*.{gql,graphql}"
+generates:
+  src/graphql/generated/types.ts:
+    plugins:
+      - "typescript"
+    allHooks: true
+
+  src/graphql/generated/queries.ts:
+    preset: import-types
+    # allHooks: true
+    presetConfig:
+      typesPath: ./types
+      # folder: ../generated
+      # extension: .generated.ts
+    plugins:
+      - "typescript"
+      - "typescript-operations"
+      - "typescript-react-apollo"
+
+  # src/graphql/generated/:
+  #   preset: "near-operation-file"
+  #   allHooks: true
+  #   presetConfig:
+  #     baseTypesPath: types.ts
+  #     folder: ../generated
+  #     extension: .generated.ts
+  #   plugins:
+  #     - "typescript"
+  #     - "typescript-operations"
+  #     - "typescript-react-apollo"
