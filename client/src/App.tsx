@@ -1,12 +1,18 @@
-import React from "react";
 import "./App.css";
-import BlogList from "./components/BlogList/BlogList";
+import CreateBlog from "./components/CreateBlog/CreateBlog";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./components/Home/Homepage";
 
 function App() {
   return (
-    <div className="App">
-      <BlogList />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route>
+          <Route index element={<Home />} />
+          <Route path="create-blog" element={<CreateBlog />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

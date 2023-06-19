@@ -1,0 +1,6 @@
+mutation addNewBlog($content: String!, $author: String!) {
+    addNewBlog(content: $content, author: $author) {
+      author
+      content
+    }
+  }

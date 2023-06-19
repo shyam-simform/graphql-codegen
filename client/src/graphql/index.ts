@@ -1,2 +1,3 @@
-export * from "./generated/BlogList.generated";
-export * from "./generated/AllBlogs.generated";
+export { useGetAllBlogsQuery } from "./__generated__/GetAllBlogs.generated";
+export { useAddNewBlogMutation } from "./__generated__/CreateBlog.generated";
+export { useBlogStreamSubscription } from "./__generated__/BlogSubscription.generated";

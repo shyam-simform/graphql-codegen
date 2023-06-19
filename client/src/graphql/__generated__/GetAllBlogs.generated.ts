@@ -47,51 +47,12 @@ export type Subscription = {
   newBlog: Blog;
 };
 
-export type BloggggsQueryVariables = Types.Exact<{ [key: string]: never; }>;
-
-
-export type BloggggsQuery = { __typename?: 'Query', getBlogs?: Array<{ __typename?: 'Blog', id: string }> | null };
-
 export type GetAllBlogsQueryVariables = Types.Exact<{ [key: string]: never; }>;
 
 
 export type GetAllBlogsQuery = { __typename?: 'Query', getBlogs?: Array<{ __typename?: 'Blog', id: string, content: string, author: string }> | null };
 
 
-export const BloggggsDocument = gql`
-    query Bloggggs {
-  getBlogs {
-    id
-  }
-}
-    `;
-
-/**
- * __useBloggggsQuery__
- *
- * To run a query within a React component, call `useBloggggsQuery` and pass it any options that fit your needs.
- * When your component renders, `useBloggggsQuery` returns an object from Apollo Client that contains loading, error, and data properties
- * you can use to render your UI.
- *
- * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
- *
- * @example
- * const { data, loading, error } = useBloggggsQuery({
- *   variables: {
- *   },
- * });
- */
-export function useBloggggsQuery(baseOptions?: Apollo.QueryHookOptions<Types.BloggggsQuery, Types.BloggggsQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<Types.BloggggsQuery, Types.BloggggsQueryVariables>(BloggggsDocument, options);
-      }
-export function useBloggggsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<Types.BloggggsQuery, Types.BloggggsQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<Types.BloggggsQuery, Types.BloggggsQueryVariables>(BloggggsDocument, options);
-        }
-export type BloggggsQueryHookResult = ReturnType<typeof useBloggggsQuery>;
-export type BloggggsLazyQueryHookResult = ReturnType<typeof useBloggggsLazyQuery>;
-export type BloggggsQueryResult = Apollo.QueryResult<Types.BloggggsQuery, Types.BloggggsQueryVariables>;
 export const GetAllBlogsDocument = gql`
     query GetAllBlogs {
   getBlogs {
@@ -117,14 +78,14 @@ export const GetAllBlogsDocument = gql`
  *   },
  * });
  */
-export function useGetAllBlogsQuery(baseOptions?: Apollo.QueryHookOptions<Types.GetAllBlogsQuery, Types.GetAllBlogsQueryVariables>) {
+export function useGetAllBlogsQuery(baseOptions?: Apollo.QueryHookOptions<GetAllBlogsQuery, GetAllBlogsQueryVariables>) {
         const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<Types.GetAllBlogsQuery, Types.GetAllBlogsQueryVariables>(GetAllBlogsDocument, options);
+        return Apollo.useQuery<GetAllBlogsQuery, GetAllBlogsQueryVariables>(GetAllBlogsDocument, options);
       }
-export function useGetAllBlogsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<Types.GetAllBlogsQuery, Types.GetAllBlogsQueryVariables>) {
+export function useGetAllBlogsLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetAllBlogsQuery, GetAllBlogsQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<Types.GetAllBlogsQuery, Types.GetAllBlogsQueryVariables>(GetAllBlogsDocument, options);
+          return Apollo.useLazyQuery<GetAllBlogsQuery, GetAllBlogsQueryVariables>(GetAllBlogsDocument, options);
         }
 export type GetAllBlogsQueryHookResult = ReturnType<typeof useGetAllBlogsQuery>;
 export type GetAllBlogsLazyQueryHookResult = ReturnType<typeof useGetAllBlogsLazyQuery>;
-export type GetAllBlogsQueryResult = Apollo.QueryResult<Types.GetAllBlogsQuery, Types.GetAllBlogsQueryVariables>;
+export type GetAllBlogsQueryResult = Apollo.QueryResult<GetAllBlogsQuery, GetAllBlogsQueryVariables>;

@@ -1,0 +1,7 @@
+subscription BlogStream {
+  newBlog {
+    content
+    id
+    author
+  }
+}
